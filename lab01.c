@@ -1,5 +1,4 @@
 #include <stdio.h>
-// ddb8c9a30c9584e63ba5f270362e8360eaf87edd
 int main()
 {
     float a, b, c;
