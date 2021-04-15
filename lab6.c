@@ -9,16 +9,16 @@ void fill(int n, int a[])
 }
 int el(int n, int m, int a[])
 {
-  int i, index = 100;
-  for (i = 0; i < n; i++)
-  {
-    if (a[i] == m)
+    int i, index = 100;
+    for (i = 0; i < n; i++)
     {
-      index = i;
-      break;
+        if (a[i] == m)
+        {
+            index = i;
+            break;
+        }
     }
-  }
-  return index;
+    return index;
 }
 int main()
 {
@@ -36,36 +36,33 @@ int main()
     printf("index = %d\n", index));
     if (index != 100)
     {
+        for (i = 0; i < index / 2; i++)
+        {
+            k = a[i];
+            a[i] = a[index - i - 1];
+            a[index - i - 1] = k;
+        }
 
-            for (i = 0; i < index / 2; i++)
-          {
-              k = a[i];
-              a[i] = a[index - i - 1];
-              a[index - i - 1] = k;
-          }
-
-
-            for (i = index + 1; i < n - index; i++)
-            {
-                l = a[i];
-                a[i] = a[n - i + index];
-                a[n - i + index] = l;
-            }
-
-      }
-      else
-      {
-          for (i = 0; i < n / 2; i++)
-          {
-              j = a[i];
-              a[i] = a[n - i -1];
-              a[n - i - 1] = j;
-          }
-      }
-      for (i = 0; i < n; i++)
-      {
-          printf("%d\t", a[i]);
-      }
-      printf("\n");
-      return 0;
+        for (i = index + 1; i < n - index; i++)
+        {
+            l = a[i];
+            a[i] = a[n - i + index];
+            a[n - i + index] = l;
+        }
+    }
+    else
+    {
+        for (i = 0; i < n / 2; i++)
+        {
+            j = a[i];
+            a[i] = a[n - i - 1];
+            a[n - i - 1] = j;
+        }
+    }
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\t", a[i]);
+    }
+    printf("\n");
+    return 0;
 }
