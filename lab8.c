@@ -20,10 +20,9 @@ int main()
     for (;;)
     {
         a = mygetch();
-        if (a == 224)
+        if (a != 27)
         {
-            a = mygetch();
-            if (iscntrl(a))
+            if ((a))
                 a = mygetch();
             if (a == 51)
                 return 0;
