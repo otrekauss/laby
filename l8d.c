@@ -18,9 +18,9 @@ int main()
 {
   char a;
   a = mygetch();
-  //a = mygetch();
-  //a = mygetch();
-//  a = mygetch();
+  a = mygetch();
+  a = mygetch();
+  a = mygetch();
   //a = mygetch();
   printf("%hhd", a);
   return 0;

@@ -23,9 +23,9 @@ int main()
         if (a != 27)
         {
             if (iscntrl(a))
-                printf("%d\n", a);
+                printf("%d", a);
             else
-                printf("%c\n", a);
+                printf("%c", a);
         }
         else
         {
@@ -33,9 +33,9 @@ int main()
             if (a != 91)
             {
                 if (iscntrl(a))
-                    printf("%d\n", a);
+                    printf("%d", a);
                 else
-                    printf("%c\n", a);
+                    printf("%c", a);
             }
             else
             {
@@ -43,9 +43,9 @@ int main()
                 if (a != 51)
                 {
                     if (iscntrl(a))
-                        printf("%d\n", a);
+                        printf("%d", a);
                     else
-                        printf("%c\n", a);
+                        printf("%c", a);
                 }
                 else
                 {
@@ -53,16 +53,18 @@ int main()
                     if (a != 126)
                     {
                         if (iscntrl(a))
-                            printf("%d\n", a);
+                            printf("%d", a);
                         else
-                            printf("%c\n", a);
+                            printf("%c", a);
                     }
                     else
+                    {
+                        printf("\n");
                         return 0;
+                    }
                 }
             }
         }
     }
-}
-return 0;
+    return 0;
 }
