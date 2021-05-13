@@ -17,11 +17,23 @@ int mygetch()
 int main()
 {
   char a;
-  a = mygetch();
-  a = mygetch();
-  a = mygetch();
-  a = mygetch();
   //a = mygetch();
-  printf("%hhd", a);
+  for (;;)
+  {
+    a = mygetch();
+    if (isalnum(a))
+      printf("%c", a);
+    // a = mygetch();
+    // printf("%d\n", a);
+    // a = mygetch();
+    // printf("%d\n", a);
+    // a = mygetch();
+    // printf("%d\n", a);
+    // a = mygetch();
+    // printf("%d\n", a);
+    // a = mygetch();
+    // printf("%d\n", a);
+    // printf("\n");
+  }
   return 0;
 }
