@@ -24,10 +24,7 @@ int transp(int n, int m, int *a, int *b)
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
         {
-            b[i * m + j] = a[j * n + i];
-            // p = a[j * n + i];
-            // a[j * n + i] = a[i * m + j];
-            // a[i * m + j] = p;
+            b[i * n + j] = a[j * m + i];
         }
     return 0;
 }
@@ -56,7 +53,7 @@ int out2(int n, int m, int *a)
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
-            printf("% 7d", a[i * m + j]);
+            printf("% 7d", a[i * n + j]);
         printf("\n");
     }
     return 0;
@@ -86,13 +83,15 @@ int main()
     printf("Vvedite chislo:");
     scanf("%d", &h);
     if (k > h)
+    {
         transp(n, m, a, b);
-    else
-        nuli(n, m, a);
-    if (n == m || k < h)
-        out1(n, m, a);
-    else
         out2(n, m, b);
+    }
+    else
+    {
+        nuli(n, m, a);
+        out1(n, m, a);
+    }
     free(a);
     return 0;
 }
