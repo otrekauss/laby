@@ -12,14 +12,43 @@ struct s
     char svobod;
 };
 
-int out(struct s hotel[])
+char dob(struct s hotel[], int m)
+{
+    for (int i = m; i < m + 1; i++)
+    {
+        printf("name -> ");
+        scanf("%s", hotel[i].name);
+        printf("stars -> ");
+        scanf("%s", hotel[i].stars);
+        printf("adres -> ");
+        scanf("%s", hotel[i].adres);
+        printf("tel -> ");
+        scanf("%s", hotel[i].tel);
+        printf("nomera -> ");
+        scanf("%s", hotel[i].nomera);
+        printf("luksi -> ");
+        scanf("%s", hotel[i].luks);
+        printf("svobodnie -> ");
+        scanf("%s", hotel[i].svobod);
+    }
+}
+
+char del(struct s hotel[], int h)
+{
+    printf("kakoi otel' udalit' -> ");
+    scanf("%d", &h);
+    struct s e4 = {" ", " ", " ", " ", " ", " ", " "};
+    hotel[h - 1] = e4;
+    printf("")
+}
+char out(struct s hotel[])
 {
     for (int i = 0; i < 4; i++)
         printf("%s %d %s %s %d %d %d\n", hotel[i].name, hotel[i].stars, hotel[i].adres, hotel[i].tel, hotel[i].nomera, hotel[i].luks, hotel[i].svobod);
     return 0;
 }
 
-int poisk(struct s hotel[], int n)
+char poisk(struct s hotel[], int n)
 {
     printf("%s %d %s %s %d %d %d\n", hotel[n - 1].name, hotel[n - 1].stars, hotel[n - 1].adres, hotel[n - 1].tel, hotel[n - 1].nomera, hotel[n - 1].luks, hotel[n - 1].svobod);
     return 0;
@@ -36,7 +65,7 @@ int main()
     hotel[2] = e2;
     struct s e3 = {"fhwf", 5, "uhiwf", "928428", 113, 5, 15};
     hotel[3] = e3;
-    int i, k = 0, n;
+    int i, k = 0, n, m = 3;
     char max;
     for (i = 1; i < 4; i++)
         if (hotel[i].stars > hotel[i - 1].stars)
